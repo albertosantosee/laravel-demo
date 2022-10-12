@@ -6,7 +6,7 @@ services:
     image: 'laradock/workspace:latest-7.4'
     volumes:
       - ./laravel-frontend:/var/www
-      - ./entrypoint.sh:/entrypoint.sh
+      - ./entrypoint2.sh:/entrypoint.sh
     working_dir: /var/www
     networks:
       - backend
@@ -21,7 +21,7 @@ services:
   database:
     image: 'mysql:8.0'
     volumes:
-      - ./database/entry.sql:/docker-entrypoint-initdb.d/entry.sql
+      - ./database/entry2.sql:/docker-entrypoint-initdb.d/entry.sql
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
